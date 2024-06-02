@@ -87,8 +87,8 @@ dateInput.addEventListener('input', function() {
 function getExpiringData() {
     const expiringDataInput = document.getElementById('expiringData');
     //expiringData = expiringDataInput.value
-
-    formAdvancementSteps('step-1', 'step-2', tempFn());
+    let result = tempFn()
+    formAdvancementSteps('step-1', 'step-2', result);
 }
 
 let singleProduct = '';
