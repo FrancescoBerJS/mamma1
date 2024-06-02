@@ -30,6 +30,7 @@
 .space-button {
     margin: 30px;
     padding:20px;
+    font-size: 1.2em;
 }
 .bg-white {
     background-color: white;
@@ -39,6 +40,9 @@ body{
     background-color: black;
     height:100vh;
 }
+
+
+
 #step-1 {
     overflow: scroll;
 }
