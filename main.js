@@ -88,8 +88,8 @@ dateInput.addEventListener('input', function() {
 function getExpiringData() {
     const expiringDataInput = document.getElementById('expiringData');
     //expiringData = expiringDataInput.value
-    let result = tempFn()
-    formAdvancementSteps('step-1', 'step-2', result);
+    expiringData = tempFn()
+    formAdvancementSteps('step-1', 'step-2', expiringData);
 }
 
 let singleProduct = '';
@@ -133,7 +133,7 @@ let expiringData = '';
 
 function dataGenerator(date, productNumber){
     let dates =[]
-   
+   console.log(date)
     for(let i=0; i <productNumber; i++) {
         if(!date){
             
