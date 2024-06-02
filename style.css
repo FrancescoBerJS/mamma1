@@ -26,6 +26,11 @@
 .margin10 {
     margin: 10px;
 }
+
+.space-button {
+    margin: 30px;
+    padding:20px;
+}
 .bg-white {
     background-color: white;
 }
