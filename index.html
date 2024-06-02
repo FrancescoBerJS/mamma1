@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="step-1" class="product-box margin10 d-flex flex-column align-items-center">
+        <div class="d-flex flex-column align-items-center margin10">
+            <label for="data">Seleziona una data di scadenza</label>
+            <input type="date" id="expiringData" name="data" autocomplete="off" onchange="getExpiringData()">
+        </div>
+
+        <div id="recapBox" class="d-flex flex-column">
+
+        </div>
+    </div>
+
+    <div id="step-2" class="product-box d-flex justify-content-center align-items-center margin10">
+        <p>Seleziona un prodotto oppure cercalo nella barra di ricerca se non lo trovi</p>
+        <div>
+            <input  id="searchInput"  type="text" name="q" placeholder="Cerca...">
+            <button type="submit" onclick="findProducts()">Cerca</button>
+        </div>
+        <div id="productList" class="">
+            <button class="pr-btn" onclick="selectProduct(this.innerText)">latte</button>
+        </div>
+        <div>
+            <input type="text" name="" id="inputMode">
+            <button onclick="selectProduct('no-string', 'modeFlex')">carica</button>
+        </div>
+        <div>
+            <button onclick="sheetGenerator()">carica nel file</button>
+        </div>
+    
+    </div>
+    
+    <div id="step-3" class="product-box d-flex justify-content-center align-items-center margin10">
+        <div>
+            <p>seleziona peso del prodotto</p>
+            <input type="text" id="weightPr" name="weight">
+        </div>
+
+        <!--<div>
+            <p>Inserisci il numero pezzi</p>
+            <input type="number" id="pieceNumber" name="pieces">
+        </div>-->
+
+        <button onclick="pushProductsInSheet()">Conferma</button>
+    </div>
+  
+    
+    <div id="generateBtn" class="d-none">
+        <button onclick="generateCSV()">genera file</button>
+    </div>
+
+    <button id="restart" class="d-none" onclick="restart()">Ricomincia</button>
+  
+</body>
+<script src="main.js"></script>
+</html>
