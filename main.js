@@ -89,9 +89,8 @@ const dateInput = document.getElementById('dateInput');
 /////////////////////////////////////
 function getExpiringData() {
     const expiringDataInput = document.getElementById('expiringData');
-    //expiringData = expiringDataInput.value
-    expiringData = tempFn()
-    console.log(tempFn())
+    expiringData = expiringDataInput.value
+    //expiringData = tempFn()
     formAdvancementSteps('step-1', 'step-2', expiringData);
 }
 
