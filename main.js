@@ -54,10 +54,10 @@ function tempFn() {
 const dateInput = document.getElementById('dateInput');
 
 // Aggiungi un gestore di eventi per l'evento 'input'
-dateInput.addEventListener('input', function() {
-    console.log(this.value)
     // Ottieni il valore inserito dall'utente
-    const inputDate = this.value.trim();
+    let inputDate = dateInput.value.trim()
+    console.log(inputDate)
+
 
     // Verifica se il valore inserito corrisponde al formato data YYYY-MM-DD
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
@@ -68,11 +68,13 @@ dateInput.addEventListener('input', function() {
         const month = parseInt(parts[1]) - 1; // Mese è 0-based
         const day = parseInt(parts[2]);
         const testDate = new Date(year, month, day);
-
+        console.log()
         if (testDate.getFullYear() === year && testDate.getMonth() === month && testDate.getDate() === day) {
             // Se è una data valida, puoi fare qualcosa con essa
-            console.log('Data valida:', testDate.toDateString());
-            return testDate.toDateString()
+            console.log('Data valida:', testDate);
+            let day = String(testDate.getDate()).padStart(2, '0');
+            let month =  String(testDate.getMonth() + 1).padStart(2, '0'); 
+            return  testDate.getFullYear() + '-' + month + '-' +day
         } else {
             // Se non è una data valida, mostra un messaggio di errore
             console.error('Data non valida.');
@@ -81,7 +83,7 @@ dateInput.addEventListener('input', function() {
         // Se il formato non è corretto, mostra un messaggio di errore
         console.error('Formato data non valido. Utilizza il formato YYYY-MM-DD.');
     }
-})
+
 }
 
 /////////////////////////////////////
@@ -89,6 +91,7 @@ function getExpiringData() {
     const expiringDataInput = document.getElementById('expiringData');
     //expiringData = expiringDataInput.value
     expiringData = tempFn()
+    console.log(tempFn())
     formAdvancementSteps('step-1', 'step-2', expiringData);
 }
 
