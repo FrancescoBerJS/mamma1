@@ -110,7 +110,14 @@ function selectProduct(inputElement, mod) {
 
 }
 
+function makeResearchInputEmpty() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.value = '';
+    const productListBox = document.getElementById('productList');
+    productListBox.innerHTML = ''
+}
 function pushProductsInSheet() {
+   
     let weightInput = document.getElementById('weightPr');
     let piecesInput = document.getElementById('pieceNumber');
 
@@ -119,6 +126,10 @@ function pushProductsInSheet() {
 
     let finalProduct = { product: singleProduct, weight};
     sheet.push(finalProduct)
+
+    //RESET SEARCH BAR
+    makeResearchInputEmpty()
+    
     formAdvancementSteps('step-3', 'step-2', finalProduct.product);
 }
 
