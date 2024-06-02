@@ -55,6 +55,7 @@ const dateInput = document.getElementById('dateInput');
 
 // Aggiungi un gestore di eventi per l'evento 'input'
 dateInput.addEventListener('input', function() {
+    console.log(this.value)
     // Ottieni il valore inserito dall'utente
     const inputDate = this.value.trim();
 
