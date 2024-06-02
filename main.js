@@ -48,10 +48,47 @@ function findProducts() {
  
 }
 
+///////////////////////////////////// added by GPT
+function tempFn() {
+    // Ottieni il riferimento all'elemento input
+const dateInput = document.getElementById('dateInput');
+
+// Aggiungi un gestore di eventi per l'evento 'input'
+dateInput.addEventListener('input', function() {
+    // Ottieni il valore inserito dall'utente
+    const inputDate = this.value.trim();
+
+    // Verifica se il valore inserito corrisponde al formato data YYYY-MM-DD
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (dateRegex.test(inputDate)) {
+        // Se il formato è corretto, verifica se è una data valida
+        const parts = inputDate.split('-');
+        const year = parseInt(parts[0]);
+        const month = parseInt(parts[1]) - 1; // Mese è 0-based
+        const day = parseInt(parts[2]);
+        const testDate = new Date(year, month, day);
+
+        if (testDate.getFullYear() === year && testDate.getMonth() === month && testDate.getDate() === day) {
+            // Se è una data valida, puoi fare qualcosa con essa
+            console.log('Data valida:', testDate.toDateString());
+            return testDate.toDateString()
+        } else {
+            // Se non è una data valida, mostra un messaggio di errore
+            console.error('Data non valida.');
+        }
+    } else {
+        // Se il formato non è corretto, mostra un messaggio di errore
+        console.error('Formato data non valido. Utilizza il formato YYYY-MM-DD.');
+    }
+})
+}
+
+/////////////////////////////////////
 function getExpiringData() {
     const expiringDataInput = document.getElementById('expiringData');
-    expiringData = expiringDataInput.value
-    formAdvancementSteps('step-1', 'step-2', expiringData);
+    //expiringData = expiringDataInput.value
+
+    formAdvancementSteps('step-1', 'step-2', tempFn());
 }
 
 let singleProduct = '';

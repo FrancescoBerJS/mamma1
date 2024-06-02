@@ -12,7 +12,10 @@
     <div id="step-1" class="product-box margin10 d-flex flex-column align-items-center">
         <div class="d-flex flex-column align-items-center margin10">
             <label for="data">Seleziona una data di scadenza</label>
-            <input type="date" id="expiringData" name="data" autocomplete="off" onchange="getExpiringData()">
+            <input type="text" id="dateInput" placeholder="Inserisci una data (YYYY-MM-DD)">
+
+           <!-- <input type="date" id="expiringData" name="data" autocomplete="off" onchange="getExpiringData()">-->
+            <button onclick="getExpiringData()">conferma</button>
         </div>
 
         <div id="recapBox" class="d-flex flex-column">
